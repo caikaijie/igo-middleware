@@ -87,10 +87,10 @@ func respond(w http.ResponseWriter, r *http.Request, rsp interface{}) error {
 	if err != nil {
 		return err
 	}
-
+	
+	w.WriteHeader(200)
 	w.Write(data)
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(200)
 
 	return nil
 }
